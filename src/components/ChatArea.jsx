@@ -19,11 +19,11 @@ export default function ChatArea({ isSidebarOpen, setIsSidebarOpen }) {
   }
 
   return (
-    <div className="flex-1 flex flex-col">
-      <div className="bg-white p-4 flex items-center border-b">
+    <div className={`flex-1 flex flex-col transition-all duration-300 ease-in-out ${isSidebarOpen ? 'ml-80' : 'ml-0'}`}>
+      <div className="p-4 border-b flex justify-between items-center">
         {!isSidebarOpen && (
-          <button onClick={() => setIsSidebarOpen(true)} className="mr-2 p-2 rounded-full hover:bg-gray-200">
-            <Menu className="h-4 w-4" />
+          <button onClick={() => setIsSidebarOpen(true)} className="p-2 rounded-full hover:bg-gray-200">
+            <Menu className="h-6 w-6" />
           </button>
         )}
         <h2 className="text-lg font-semibold">Persona</h2>

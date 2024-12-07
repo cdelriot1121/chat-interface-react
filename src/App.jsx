@@ -6,7 +6,7 @@ function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
 
   return (
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex h-screen">
       <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
       <ChatArea isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
     </div>

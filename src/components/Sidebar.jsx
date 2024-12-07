@@ -6,13 +6,13 @@ import * as Avatar from '@radix-ui/react-avatar'
 
 export default function Sidebar({ isOpen, setIsOpen }) {
   const [chats, setChats] = useState([
-    { id: 1, name: 'Persona1', lastMessage: 'Hey, how are you?' },
-    { id: 2, name: 'Persona2', lastMessage: 'See you tomorrow!' },
-    { id: 3, name: 'Persona3', lastMessage: 'Meeting at 3 PM' },
+    { id: 1, name: 'Persona1', lastMessage: 'Ultimo Mensaje' },
+    { id: 2, name: 'Persona2', lastMessage: 'Ultimo Mensaje' },
+    { id: 3, name: 'Persona3', lastMessage: 'Ultimo Mensaje' },
   ])
 
   return (
-    <div className={`bg-white w-80 flex flex-col transition-all duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+    <div className={`bg-white w-80 flex flex-col transition-all duration-300 ease-in-out fixed top-0 left-0 h-full ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
       <div className="p-4 flex justify-between items-center border-b">
         <h2 className="text-lg font-semibold">Chats</h2>
         <button onClick={() => setIsOpen(false)} className="p-2 rounded-full hover:bg-gray-200">

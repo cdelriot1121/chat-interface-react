@@ -45,7 +45,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
           <DropdownMenu.Trigger asChild>
             <button className="w-full flex items-center p-2 rounded-lg hover:bg-gray-100">
               <Avatar.Root className="w-8 h-8 rounded-full bg-gray-300 mr-2">
-                <Avatar.Image src="https://github.com/shadcn.png" />
+                <Avatar.Image src="https://avatars.githubusercontent.com/u/137203832?v=4" />
                 <Avatar.Fallback>CN</Avatar.Fallback>
               </Avatar.Root>
               <span>Tu Nombre</span>

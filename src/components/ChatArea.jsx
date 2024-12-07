@@ -13,7 +13,7 @@ export default function ChatArea({ isSidebarOpen, setIsSidebarOpen }) {
 
   const handleSendMessage = () => {
     if (newMessage.trim()) {
-      setMessages([...messages, { id: messages.length + 1, sender: 'You', content: newMessage }])
+      setMessages([...messages, { id: messages.length + 1, sender: 'Tu', content: newMessage }])
       setNewMessage('')
     }
   }
@@ -26,13 +26,13 @@ export default function ChatArea({ isSidebarOpen, setIsSidebarOpen }) {
             <Menu className="h-4 w-4" />
           </button>
         )}
-        <h2 className="text-lg font-semibold">John Doe</h2>
+        <h2 className="text-lg font-semibold">Persona</h2>
       </div>
       <ScrollArea.Root className="flex-grow">
         <ScrollArea.Viewport className="w-full h-full p-4">
           {messages.map((message) => (
-            <div key={message.id} className={`mb-4 ${message.sender === 'You' ? 'text-right' : ''}`}>
-              <div className={`inline-block p-2 rounded-lg ${message.sender === 'You' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}>
+            <div key={message.id} className={`mb-4 ${message.sender === 'Tu' ? 'text-right' : ''}`}>
+              <div className={`inline-block p-2 rounded-lg ${message.sender === 'Tu' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}>
                 <p>{message.content}</p>
               </div>
               <p className="text-sm text-gray-500 mt-1">{message.sender}</p>

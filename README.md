@@ -26,9 +26,10 @@
 ### 1. clonar el repositorio
 
 ```bash
-git clone https://github.com/cdelriot1121/react-plantilla-chat.git
-
-cd react-plantilla-chat
+git clone https://github.com/cdelriot1121/chat-interface-react.git
+```
+```bash
+cd chat-interface-react
 ```
 ### 2. instalar todos los modulos
 ```bash

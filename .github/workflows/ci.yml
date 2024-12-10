@@ -24,5 +24,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run development server
-        run: npm run dev
+      - name: Start and verify server
+        run: |
+          npm run dev &
+          sleep 10
+          curl -I http://localhost:5173 || exit 1
+          kill %1

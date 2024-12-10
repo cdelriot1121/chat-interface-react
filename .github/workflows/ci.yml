@@ -1,15 +1,12 @@
-name: React App Workflow
+name: Deploy React App to Netlify
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
-  setup-and-run:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,9 +21,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Start and verify server
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to Netlify
         run: |
-          npm run dev &
-          sleep 10
-          curl -I http://localhost:5173 || exit 1
-          kill %1
+          npm install -g netlify-cli
+          netlify deploy --prod --dir=dist --auth=${{ secrets.NETLIFY_AUTH_TOKEN }}

@@ -12,7 +12,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
   ])
 
   return (
-    <div className={`bg-white w-80 flex flex-col transition-all duration-300 ease-in-out fixed top-0 left-0 h-full ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+    <div className={`bg-white w-80 flex flex-col transition-all duration-300 ease-in-out fixed top-0 left-0 h-full ${isOpen ? 'translate-x-0' : '-translate-x-full'} flex-shrink-0`}>
       <div className="p-4 flex justify-between items-center border-b">
         <h2 className="text-lg font-semibold">Chats</h2>
         <button onClick={() => setIsOpen(false)} className="p-2 rounded-full hover:bg-gray-200">

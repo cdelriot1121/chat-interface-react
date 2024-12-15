@@ -20,7 +20,7 @@ export default function ChatArea({ isSidebarOpen, setIsSidebarOpen }) {
 
   return (
     <div className={`flex-1 flex flex-col transition-all duration-300 ease-in-out ${isSidebarOpen ? 'ml-80' : 'ml-0'}`}>
-      <div className="p-4 border-b flex justify-between items-center">
+      <div className="p-4 border-b flex justify-between items-center sticky top-0 bg-white">
         {!isSidebarOpen && (
           <button onClick={() => setIsSidebarOpen(true)} className="p-2 rounded-full hover:bg-gray-200">
             <Menu className="h-6 w-6" />
@@ -28,7 +28,7 @@ export default function ChatArea({ isSidebarOpen, setIsSidebarOpen }) {
         )}
         <h2 className="text-lg font-semibold">Persona</h2>
       </div>
-      <ScrollArea.Root className="flex-grow">
+      <ScrollArea.Root className="flex-grow overflow-y-auto">
         <ScrollArea.Viewport className="w-full h-full p-4">
           {messages.map((message) => (
             <div key={message.id} className={`mb-4 ${message.sender === 'Tu' ? 'text-right' : ''}`}>

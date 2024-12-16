@@ -1,16 +1,31 @@
 import { useState } from 'react'
-import Sidebar from './components/Sidebar'
-import ChatArea from './components/ChatArea'
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
+import Login from './components/Login'
+import Register from './components/Register'
+import ChatInterface from './components/ChatInterface'
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
 
   return (
-    <div className="flex h-screen">
-      <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
-      <ChatArea isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
-    </div>
+    <Router>
+      <div className="h-screen bg-gray-100">
+        <Routes>
+          <Route path="/login" element={
+            isAuthenticated ? <Navigate to="/chat" /> : <Login setIsAuthenticated={setIsAuthenticated} />
+          } />
+          <Route path="/register" element={
+            isAuthenticated ? <Navigate to="/chat" /> : <Register setIsAuthenticated={setIsAuthenticated} />
+          } />
+          <Route path="/chat" element={
+            isAuthenticated ? <ChatInterface /> : <Navigate to="/login" />
+          } />
+          <Route path="*" element={<Navigate to="/login" />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 
 export default App
+

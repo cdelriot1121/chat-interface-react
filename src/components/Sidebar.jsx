@@ -1,15 +1,22 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { ChevronLeft, Settings, Bell, Archive, LogOut } from 'lucide-react'
 import * as ScrollArea from '@radix-ui/react-scroll-area'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import * as Avatar from '@radix-ui/react-avatar'
 
 export default function Sidebar({ isOpen, setIsOpen }) {
+  const navigate = useNavigate()
   const [chats, setChats] = useState([
     { id: 1, name: 'Persona1', lastMessage: 'Ultimo Mensaje' },
     { id: 2, name: 'Persona2', lastMessage: 'Ultimo Mensaje' },
     { id: 3, name: 'Persona3', lastMessage: 'Ultimo Mensaje' },
   ])
+
+  const handleLogout = () => {
+    // Aquí normalmente limpiarías el token de autenticación
+    navigate('/login')
+  }
 
   return (
     <div className={`bg-white w-80 flex flex-col transition-all duration-300 ease-in-out fixed top-0 left-0 h-full ${isOpen ? 'translate-x-0' : '-translate-x-full'} flex-shrink-0`}>
@@ -68,7 +75,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
                 <span>Chats archivados</span>
               </DropdownMenu.Item>
               <DropdownMenu.Separator className="my-1 h-px bg-gray-200" />
-              <DropdownMenu.Item className="px-2 py-1 text-sm cursor-pointer hover:bg-gray-100 rounded flex items-center">
+              <DropdownMenu.Item className="px-2 py-1 text-sm cursor-pointer hover:bg-gray-100 rounded flex items-center" onSelect={handleLogout}>
                 <LogOut className="mr-2 h-4 w-4" />
                 <span>Cerrar sesión</span>
               </DropdownMenu.Item>
@@ -79,3 +86,4 @@ export default function Sidebar({ isOpen, setIsOpen }) {
     </div>
   )
 }
+

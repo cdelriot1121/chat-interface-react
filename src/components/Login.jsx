@@ -7,8 +7,6 @@ export default function Login({ setIsAuthenticated }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Here you would typically make an API call to verify credentials
-    // For this example, we'll just set isAuthenticated to true
     setIsAuthenticated(true)
   }
 

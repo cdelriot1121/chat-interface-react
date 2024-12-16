@@ -8,8 +8,7 @@ export default function Register({ setIsAuthenticated }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Here you would typically make an API call to register the user
-    // For this example, we'll just set isAuthenticated to true
+
     setIsAuthenticated(true)
   }
 

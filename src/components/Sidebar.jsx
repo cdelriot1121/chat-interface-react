@@ -14,7 +14,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
   ])
 
   const handleLogout = () => {
-    // Aquí normalmente limpiarías el token de autenticación
+    
     navigate('/login')
   }
 

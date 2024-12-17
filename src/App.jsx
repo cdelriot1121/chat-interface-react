@@ -11,7 +11,7 @@ function App() {
     <Router>
       <div className="h-screen bg-gray-100">
         <Routes>
-          <Route path="/login" element={
+          <Route path="/" element={
             isAuthenticated ? <Navigate to="/chat" /> : <Login setIsAuthenticated={setIsAuthenticated} />
           } />
           <Route path="/register" element={
@@ -20,7 +20,7 @@ function App() {
           <Route path="/chat" element={
             isAuthenticated ? <ChatInterface /> : <Navigate to="/login" />
           } />
-          <Route path="*" element={<Navigate to="/login" />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
     </Router>

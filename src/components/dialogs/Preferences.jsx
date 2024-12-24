@@ -11,7 +11,6 @@ export default function Preferences({ isOpen, onClose }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Aquí iría la lógica para actualizar los datos del usuario
     onClose()
   }
 

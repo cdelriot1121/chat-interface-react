@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Login from './components/Login'
 import Register from './components/Register'
 import ChatInterface from './components/ChatInterface'
+import Preferences from './components/Preferences'  
+import ArchivedChats from './components/ArchivedChats'  
+import Notifications from './components/Notifications'  
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -20,6 +23,15 @@ function App() {
           <Route path="/chat" element={
             isAuthenticated ? <ChatInterface /> : <Navigate to="/login" />
           } />
+          <Route path="/preferences" element={
+            isAuthenticated ? <Preferences /> : <Navigate to="/login" />
+          } />
+          <Route path="/archived-chats" element={
+            isAuthenticated ? <ArchivedChats /> : <Navigate to="/login" />
+          } />
+          <Route path="/notifications" element={
+            isAuthenticated ? <Notifications /> : <Navigate to="/login" />
+          } />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
@@ -28,4 +40,3 @@ function App() {
 }
 
 export default App
-

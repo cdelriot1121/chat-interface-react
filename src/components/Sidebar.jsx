@@ -14,8 +14,12 @@ export default function Sidebar({ isOpen, setIsOpen }) {
   ])
 
   const handleLogout = () => {
-    
     navigate('/login')
+  }
+
+  const handleNavigate = (path) => {
+    navigate(path)
+    setIsOpen(false) // Esto cierra el sidebar al navegar momentaneamente :d
   }
 
   return (
@@ -62,20 +66,32 @@ export default function Sidebar({ isOpen, setIsOpen }) {
             <DropdownMenu.Content className="bg-white rounded-lg shadow-lg p-2 w-56">
               <DropdownMenu.Label className="px-2 py-1 text-sm font-semibold">Mi cuenta</DropdownMenu.Label>
               <DropdownMenu.Separator className="my-1 h-px bg-gray-200" />
-              <DropdownMenu.Item className="px-2 py-1 text-sm cursor-pointer hover:bg-gray-100 rounded flex items-center">
+              <DropdownMenu.Item 
+                className="px-2 py-1 text-sm cursor-pointer hover:bg-gray-100 rounded flex items-center"
+                onClick={() => handleNavigate('/preferences')}  // Redirige a Preferencias
+              >
                 <Settings className="mr-2 h-4 w-4" />
                 <span>Preferencias</span>
               </DropdownMenu.Item>
-              <DropdownMenu.Item className="px-2 py-1 text-sm cursor-pointer hover:bg-gray-100 rounded flex items-center">
+              <DropdownMenu.Item 
+                className="px-2 py-1 text-sm cursor-pointer hover:bg-gray-100 rounded flex items-center"
+                onClick={() => handleNavigate('/notifications')}  // Redirige a Notificaciones
+              >
                 <Bell className="mr-2 h-4 w-4" />
                 <span>Notificaciones</span>
               </DropdownMenu.Item>
-              <DropdownMenu.Item className="px-2 py-1 text-sm cursor-pointer hover:bg-gray-100 rounded flex items-center">
+              <DropdownMenu.Item 
+                className="px-2 py-1 text-sm cursor-pointer hover:bg-gray-100 rounded flex items-center"
+                onClick={() => handleNavigate('/archived-chats')}  // Redirige a Chats Archivados
+              >
                 <Archive className="mr-2 h-4 w-4" />
                 <span>Chats archivados</span>
               </DropdownMenu.Item>
               <DropdownMenu.Separator className="my-1 h-px bg-gray-200" />
-              <DropdownMenu.Item className="px-2 py-1 text-sm cursor-pointer hover:bg-gray-100 rounded flex items-center" onSelect={handleLogout}>
+              <DropdownMenu.Item 
+                className="px-2 py-1 text-sm cursor-pointer hover:bg-gray-100 rounded flex items-center" 
+                onSelect={handleLogout}
+              >
                 <LogOut className="mr-2 h-4 w-4" />
                 <span>Cerrar sesión</span>
               </DropdownMenu.Item>
@@ -86,4 +102,3 @@ export default function Sidebar({ isOpen, setIsOpen }) {
     </div>
   )
 }
-

@@ -7,9 +7,9 @@ export default function Notifications() {
     {
       id: 1,
       type: 'message',
-      content: 'Nuevo mensaje de John Doe',
+      content: 'Nuevo mensaje de Persona',
       time: '2 min ago',
-      read: false
+      read: true
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ export default function Notifications() {
     {
       id: 3,
       type: 'message',
-      content: 'Jane Smith te ha enviado una solicitud de chat',
+      content: 'Persona te ha enviado una solicitud de chat',
       time: '2 hours ago',
       read: true
     }
@@ -60,4 +60,3 @@ export default function Notifications() {
     </div>
   )
 }
-

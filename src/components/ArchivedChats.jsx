@@ -12,14 +12,14 @@ export default function ArchivedChats() {
     },
     {
       id: 2,
-      name: 'Grupo Vacaciones 2023',
-      lastMessage: 'Fue un viaje increíble',
+      name: 'Grupo 2024',
+      lastMessage: 'Nuevo mensaje',
       date: '1 month ago'
     },
     {
       id: 3,
       name: 'Soporte Técnico',
-      lastMessage: 'Tu ticket ha sido resuelto',
+      lastMessage: 'Nueva Actualizacion de sistema',
       date: '2 months ago'
     }
   ]
@@ -55,4 +55,3 @@ export default function ArchivedChats() {
     </div>
   )
 }
-
